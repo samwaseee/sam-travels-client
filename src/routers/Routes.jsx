@@ -3,6 +3,7 @@ import {
 } from "react-router-dom";
 import Home from '../components/layout/Home';
 import Root from "../components/Root";
+import AddSpots from "../components/Private/AddSpots";
 
 
 const router = createBrowserRouter([
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>
+            },
+            {
+                path: "/addSpot",
+                element: <AddSpots></AddSpots>
             }
         ]
     }

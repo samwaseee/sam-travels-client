@@ -24,18 +24,18 @@ const Navbar = () => {
             };
         }}>All Tourist Spot</NavLink></li>
         <li>
-            {/* {
-                user &&
-                <NavLink to="/properties" className="rounded-sm" style={({ isActive, isTransitioning }) => {
+            {
+                // user &&
+                <NavLink to="/addSpot" className="rounded-sm" style={({ isActive, isTransitioning }) => {
                     return {
                         fontWeight: isActive ? "bold" : "",
-                        color: isActive ? "#452820" : "",
-                        backgroundColor: isActive ? "white" : "",
-                        borderTop: isActive ? "solid #452820" : "solid white",
+                        color: isActive ? "#ff4838" : "white",
+                        backgroundColor: isActive ? "#162b3241" : "",
+                        borderBottom: isActive ? "solid #ff4838" : "solid #162b3241",
                         viewTransitionName: isTransitioning ? "slide" : "",
                     };
-                }}>Properties</NavLink>
-            } */}
+                }}>Add Tourists Spot</NavLink>
+            }
         </li>
         <li>{
             // user &&
