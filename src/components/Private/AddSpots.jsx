@@ -3,29 +3,33 @@ import Swal from 'sweetalert2';
 
 const AddSpots = () => {
 
-    const handleAddCoffee = e => {
+    const handleAddTouristSpot = e => {
         e.preventDefault();
 
         const form = e.target;
 
         const name = form.name.value;
-        const quantity = form.quantity.value;
-        const supplier = form.supplier.value;
-        const taste = form.taste.value;
-        const category = form.category.value;
-        const details = form.details.value;
+        const email = form.email.value;
+        const touristSpotName = form.touristSpotName.value;
+        const countryName = form.countryName.value;
+        const location = form.location.value;
+        const shortDescription = form.shortDescription.value;
+        const averageCost = form.averageCost.value;
+        const seasonality = form.seasonality.value;
+        const travelTime = form.travelTime.value;
+        const totalVisitorPerYear = form.totalVisitorPerYear.value;
         const photo = form.photo.value;
 
-        const newCoffee = { name, quantity, supplier, taste, category, details, photo }
+        const newSpot = { name, email ,touristSpotName , countryName, location, shortDescription, averageCost, seasonality, travelTime, totalVisitorPerYear, photo }
 
-        console.log(newCoffee);
+        console.log(newSpot);
 
-        fetch('http://localhost:5000/coffee', {
+        fetch('http://localhost:5000/touristSpot', {
             method: 'POST',
             headers: {
                 'content-type': "application/json"
             },
-            body: JSON.stringify(newCoffee)
+            body: JSON.stringify(newSpot)
         })
             .then(res => res.json())
             .then(data => {
@@ -33,87 +37,90 @@ const AddSpots = () => {
                 if (data.insertedId) {
                     Swal.fire({
                         title: "Success",
-                        text: "Coffee Added Successfully!",
+                        text: "New Tourist Spot Added Successfully!",
                         icon: "success"
                     });
                 }
+                form.reset();
             })
 
     }
 
 
     return (
-        <form onSubmit={handleAddCoffee} className='p-32 mx-auto  bg-gradient-to-r from-[#162b32b2] to-[#162b329b]'>
-            <img src="https://demo.egenslab.com/html/tourxpro/demo/assets/images/banner/hero-bg1.png" alt="" className='w-full object-fill h-[140vh] lg:max-h-full top-12 left-0 absolute -z-10 mt-4' />
-            <h3 className='text-5xl font-playfair text-white text-center font-bold'>Add Your Favourite Tourists Spot</h3>
+        <form onSubmit={handleAddTouristSpot} className='p-32 mx-auto ' style={{background: `linear-gradient(90deg, #162b32b2, #162b329b), url('https://demo.egenslab.com/html/tourxpro/demo/assets/images/banner/hero-bg1.png')`, backgroundRepeat: 'no-repeat' , backgroundSize: 'cover'}}>
+            <h3 className='text-5xl font-playfair text-white text-center font-bold mb-20'>Add Your Favourite Tourists Spot</h3>
             <div className='grid grid-cols-3 gap-3'>
-                <label className="form-control w-full max-w-xs">
+                <label className="form-control w-full ">
                     <div className="label">
                         <span className="label-text text-white">Tourist Spot Name</span>
                     </div>
-                    <input type="text" name='name' placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                    <input type="text" name='touristSpotName' placeholder="Type here" className="input input-bordered w-full " />
                 </label>
-                <label className="form-control w-full max-w-xs">
+                <label className="form-control w-full ">
                     <div className="label">
                         <span className="label-text text-white">Country Name</span>
                     </div>
-                    <input type="text" name='name' placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                    <input type="text" name='countryName' placeholder="Type here" className="input input-bordered w-full " />
                 </label>
-                <label className="form-control w-full max-w-xs">
+                <label className="form-control w-full ">
                     <div className="label">
-                        <span className="label-text text-white">Coffee Name</span>
+                        <span className="label-text text-white">Location</span>
                     </div>
-                    <input type="text" name='name' placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                    <input type="text" name='location' placeholder="Type here" className="input input-bordered w-full " />
                 </label>
-                <label className="form-control w-full max-w-xs">
+                <label className="form-control w-full col-span-2">
                     <div className="label">
-                        <span className="label-text text-white">Coffee Name</span>
+                        <span className="label-text text-white">User Email</span>
                     </div>
-                    <input type="text" name='name' placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                    <input type="email" name='email' placeholder="Type here" className="input input-bordered w-full " />
                 </label>
-                <label className="form-control w-full max-w-xs">
+                <label className="form-control w-full ">
                     <div className="label">
-                        <span className="label-text text-white">Supplier</span>
+                        <span className="label-text text-white">Seasonality</span>
                     </div>
-                    <input type="text" name='supplier' placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                    <input type="text" name='seasonality' placeholder="Ex. Summer / Winter" className="input input-bordered w-full " />
                 </label>
-                <label className="form-control w-full max-w-xs">
+                <label className="form-control col-span-2 w-full ">
                     <div className="label">
-                        <span className="label-text text-white">Category</span>
+                        <span className="label-text text-white">User Name</span>
                     </div>
-                    <input type="text" name='category' placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                    <input type="text" name='name' placeholder="Type here" className="input input-bordered w-full " />
                 </label>
-                <label className="form-control w-full max-w-xs">
+                <label className="form-control w-full ">
                     <div className="label">
-                        <span className="label-text text-white">Quantity</span>
+                        <span className="label-text text-white">Travel Time</span>
                     </div>
-                    <input type="number" name='quantity' placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                    <input type="number" name='travelTime' placeholder="Ex. 7 days" className="input input-bordered w-full " />
                 </label>
-                <label className="form-control w-full max-w-xs">
+                <label className="form-control w-full col-span-2 row-span-2">
                     <div className="label">
-                        <span className="label-text text-white">Taste</span>
+                        <span className="label-text text-white">Short Description</span>
                     </div>
-                    <input type="text" name='taste' placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                    <textarea className="textarea textarea-bordered w-full h-full" name='shortDescription' placeholder="Write a short description about the tourist spot here."></textarea>
+                    {/* <input type="text" name='shortDescription' placeholder="Type here" className="textarea textarea-bordered text-start w-full h-full" /> */}
                 </label>
-                <label className="form-control w-full max-w-xs">
+                <label className="form-control w-full ">
                     <div className="label">
-                        <span className="label-text text-white">Details</span>
+                        <span className="label-text text-white">Total Visitor Per Year</span>
                     </div>
-                    <input type="text" name='details' placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+                    <input type="number" name='totalVisitorPerYear' placeholder="Ex. 1000 " className="input input-bordered w-full " />
                 </label>
-                <label className="form-control col-span-2 w-full mx-auto">
+                <label className="form-control w-full ">
+                    <div className="label">
+                        <span className="label-text text-white">Average Cost</span>
+                    </div>
+                    <input type="number" name='averageCost' placeholder="Type here" className="input input-bordered w-full " />
+                </label>
+
+
+                <label className="form-control col-span-3 w-full mx-auto">
                     <div className="label">
                         <span className="label-text text-white">Photo URL</span>
                     </div>
-                    <input type="URL" name='photo' placeholder="Type here" className="input input-bordered w-11/12" />
+                    <input type="URL" name='photo' placeholder="Use image URL" className="input input-bordered " />
                 </label>
-                <label className="form-control w-full max-w-xs">
-                    <div className="label">
-                        <span className="label-text text-white">Details</span>
-                    </div>
-                    <input type="text" name='details' placeholder="Type here" className="input input-bordered w-full max-w-xs" />
-                </label>
-                <input type="submit" value="ADD TOURIST SPOT" className='btn btn-ghost text-white font-bold text-xl bg-[#ff4838] col-span-3 w-11/12 mt-7' />
+                <input type="submit" value="ADD TOURIST SPOT" className='btn btn-ghost text-white font-bold text-xl bg-[#ff4838] col-span-3 mt-7' />
             </div>
         </form>
     );
