@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './Header';
 import { useLoaderData } from 'react-router-dom';
 import TouristSpot from './TouristSpot';
@@ -8,7 +8,8 @@ import PhotoGallery from './PhotoGallery';
 
 const Home = () => {
 
-    const touristSpots = useLoaderData();
+    const loadedtouristSpots = useLoaderData();
+    const [touristSpots,setTouristSpots] = useState(loadedtouristSpots);
 
 
     return (
@@ -21,6 +22,8 @@ const Home = () => {
                         touristSpots.map(touristSpot => <TouristSpot
                             key={touristSpot._id}
                             touristSpot={touristSpot}
+                            touristSpots={touristSpots}
+                            setTouristSpots={setTouristSpots}
                         ></TouristSpot>)
                     }
                 </div>

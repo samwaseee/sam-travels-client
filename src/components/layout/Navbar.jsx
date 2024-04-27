@@ -1,8 +1,17 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../../provider/AuthProvider';
+import { Tooltip } from 'react-tooltip';
 
 const Navbar = () => {
 
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleSignout = () => {
+        logOut()
+            .then()
+            .catch()
+    }
 
     const links = <>
         <li><NavLink to="/" className="rounded-sm" style={({ isActive, isTransitioning }) => {
@@ -25,7 +34,7 @@ const Navbar = () => {
         }}>All Tourist Spot</NavLink></li>
         <li>
             {
-                // user &&
+                user &&
                 <NavLink to="/addSpot" className="rounded-sm" style={({ isActive, isTransitioning }) => {
                     return {
                         fontWeight: isActive ? "bold" : "",
@@ -69,9 +78,22 @@ const Navbar = () => {
                     {links}
                 </ul>
             </div>
-            <div className="navbar-end gap-3">
-                <a className="btn btn-outline text-[#ff4838]">Log In</a>
-                <a className="btn btn-outline text-[#ff4838]">Register</a>
+            <div className="navbar-end grid md:flex">
+                {
+                    user ?
+                        <div className="flex gap-3 items-center">
+                            <a data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName}>
+                                <button className=""> <img src={user.photoURL} alt="No image" className="rounded-badge w-10" /> </button>
+                            </a>
+                            <Tooltip id="my-tooltip" />
+                            <button onClick={handleSignout} className="btn btn-outline text-white bg-[#ab978ad9]">Log Out</button>
+                        </div>
+                        :
+                        <div>
+                            <Link to={'/logIn'}><button className="btn btn-ghost mr-5 text-white bg-[#ff4838]">Log In</button></Link>
+                            <Link to={'/signUp'}><button className="btn btn-outline text-[#ff4838]">Sign Up</button></Link>
+                        </div>
+                }
             </div>
         </div>
     );
