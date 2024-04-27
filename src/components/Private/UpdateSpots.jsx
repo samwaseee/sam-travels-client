@@ -6,7 +6,7 @@ const UpdateSpots = () => {
 
     const touristSpot = useLoaderData();
     const { _id, average_cost, country_Name, travel_time, image, location, seasonality, short_description, totalVisitorsPerYear, tourists_spot_name, user_email, user_name } = touristSpot;
-    console.log(touristSpot)
+    // console.log(touristSpot)
 
     const handleUpdateTouristSpot = e => {
         e.preventDefault();

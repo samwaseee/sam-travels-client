@@ -47,16 +47,16 @@ const Navbar = () => {
             }
         </li>
         <li>{
-            // user &&
-            // <NavLink to="/updateProfile" className="rounded-sm" style={({ isActive, isTransitioning }) => {
-            //     return {
-            //         fontWeight: isActive ? "bold" : "",
-            //         color: isActive ? "#452820" : "",
-            //         backgroundColor: isActive ? "white" : "",
-            //         borderTop: isActive ? "solid #452820" : "solid white",
-            //         viewTransitionName: isTransitioning ? "slide" : "",
-            //     };
-            // }}>Update Profile</NavLink>
+            user &&
+            <NavLink to="/myList" className="rounded-sm" style={({ isActive, isTransitioning }) => {
+                return {
+                    fontWeight: isActive ? "bold" : "",
+                    color: isActive ? "#ff4838" : "white",
+                    backgroundColor: isActive ? "#162b3241" : "",
+                    borderBottom: isActive ? "solid #ff4838" : "solid #162b3241",
+                    viewTransitionName: isTransitioning ? "slide" : "",
+                };
+            }}>My List</NavLink>
         }</li>
     </>
 
@@ -86,7 +86,7 @@ const Navbar = () => {
                                 <button className=""> <img src={user.photoURL} alt="No image" className="rounded-badge w-10" /> </button>
                             </a>
                             <Tooltip id="my-tooltip" />
-                            <button onClick={handleSignout} className="btn btn-outline text-white bg-[#ab978ad9]">Log Out</button>
+                            <button onClick={handleSignout} className="btn btn-outline text-white bg-[#ff4838]">Log Out</button>
                         </div>
                         :
                         <div>
