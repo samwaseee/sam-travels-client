@@ -6,6 +6,7 @@ import TopCountries from './TopCountries';
 import Newsletter from './Newsletter';
 import PhotoGallery from './PhotoGallery';
 import { Helmet } from 'react-helmet';
+import Countries from './Countries';
 
 const Home = () => {
 
@@ -34,14 +35,7 @@ const Home = () => {
                 </div>
                 <h3 className='text-center text-4xl font-bold mt-20'>Explore Top Destination Countries</h3>
                 <p className='text-center max-w-5xl mx-auto'>Embark on an unforgettable journey with SAM Travels as we take you through some of the top destination countries in the world. Our curated travel packages cover a wide range of countries, each offering a unique blend of culture, history, and natural beauty.</p>
-                <div className="flex flex-wrap gap-5 justify-center mt-10">
-                    {
-                        touristSpots.map(touristSpot => <TopCountries
-                            key={touristSpot._id}
-                            touristSpot={touristSpot}
-                        ></TopCountries>)
-                    }
-                </div>
+                <Countries></Countries>
                 <Newsletter></Newsletter>
                 <PhotoGallery></PhotoGallery>
             </div>
