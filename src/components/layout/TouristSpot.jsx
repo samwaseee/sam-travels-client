@@ -46,7 +46,7 @@ const TouristSpot = ({ touristSpot , touristSpots , setTouristSpots }) => {
 
     return (
         <div>
-            <div className="card w-96 glass">
+            <div className="card w-96 glass ">
                 <img src={image} alt={location} />
                 <div onClick={() => handleDelete(_id)} className='btn btn-error text-black absolute right-1 top-1 glass'>X</div>
                 <Link to={`/updateSpot/${_id}`}>

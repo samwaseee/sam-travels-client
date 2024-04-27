@@ -8,12 +8,14 @@ import UpdateSpots from "../components/Private/UpdateSpots";
 import LogIn from "../components/Authentication/LogIn";
 import SignUp from "../components/Authentication/SignUp";
 import PrivateRoute from "./PrivateRoute";
+import Error from "../components/error/Error";
 
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Root></Root>,
+        errorElement: <Error></Error>,
         children: [
             {
                 path: "/",
