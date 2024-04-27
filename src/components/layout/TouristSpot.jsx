@@ -11,47 +11,12 @@ const TouristSpot = ({ touristSpot, touristSpots, setTouristSpots }) => {
     const { _id, average_cost, country_Name, travel_time, image, location, seasonality, short_description, totalVisitorsPerYear, tourists_spot_name, user_email, user_name } = touristSpot
 
     // console.log(touristSpot);
-    const handleDelete = _id => {
-        // console.log(_id);
-
-        Swal.fire({
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                fetch(`http://localhost:5000/touristSpot/${_id}`, {
-                    method: 'DELETE'
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log(data);
-                        if (data.deletedCount > 0) {
-                            Swal.fire({
-                                title: "Deleted!",
-                                text: "Your file has been deleted.",
-                                icon: "success"
-                            });
-                            const remaining = touristSpots.filter(tSpot => tSpot._id !== _id)
-                            setTouristSpots(remaining);
-                        }
-                    })
-            }
-        });
-    }
+    
 
     return (
         <div>
             <div className="card w-96 glass ">
                 <img src={image} alt={location} />
-                <div onClick={() => handleDelete(_id)} className='btn btn-error text-black absolute right-1 top-1 glass'>X</div>
-                <Link to={`/updateSpot/${_id}`}>
-                    <div className='btn btn-error text-black absolute right-1 top-14 glass'>Edit</div>
-                </Link>
                 <div className="card-body">
                     <div className=' -mt-12'>
                         <div className='badge bg-[#ff4838] flex gap-2 text-lg p-4 font-bold text-white'> <IoLocationOutline /> {location}</div>

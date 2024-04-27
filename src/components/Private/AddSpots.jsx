@@ -1,11 +1,13 @@
 import React, { useContext, useRef } from 'react';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../provider/AuthProvider';
+import { useNavigate } from 'react-router-dom';
 
 const AddSpots = () => {
 
 
     const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
     // console.log(user);
 
     const countryRef = useRef(null);
@@ -15,7 +17,7 @@ const AddSpots = () => {
 
         const form = e.target;
 
-        const user_name = form.name.value;
+        const user_name = form.user_name.value;
         const user_email = form.user_email.value;
         const tourists_spot_name = form.tourists_spot_name.value;
         const country_Name = countryRef.current.value;
@@ -49,6 +51,7 @@ const AddSpots = () => {
                     });
                 }
                 form.reset();
+                navigate('/');
             })
 
     }

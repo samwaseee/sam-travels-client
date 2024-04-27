@@ -35,9 +35,9 @@ const router = createBrowserRouter([
                 loader: () => fetch('http://localhost:5000/touristSpot')
             },
             {
-                path: "/myList",
+                path: "/myList/:user_email/:user_name",
                 element: <PrivateRoute> <MyList></MyList> </PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/touristSpot')
+                loader: ({params}) => fetch(`http://localhost:5000/touristSpot/${params.user_email}/${params.user_name}`)
             },
             {
                 path: "/updateSpot/:id",

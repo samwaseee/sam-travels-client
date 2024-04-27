@@ -48,7 +48,7 @@ const Navbar = () => {
         </li>
         <li>{
             user &&
-            <NavLink to="/myList" className="rounded-sm" style={({ isActive, isTransitioning }) => {
+            <NavLink to={`/myList/${user.email}/${user.displayName}`} className="rounded-sm" style={({ isActive, isTransitioning }) => {
                 return {
                     fontWeight: isActive ? "bold" : "",
                     color: isActive ? "#ff4838" : "white",
