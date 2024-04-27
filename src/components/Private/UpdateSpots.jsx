@@ -27,7 +27,7 @@ const UpdateSpots = () => {
 
         const updatedSpot = {average_cost, country_Name, travel_time, image, location, seasonality, short_description, totalVisitorsPerYear, tourists_spot_name, user_email, user_name}
 
-        console.log(updatedSpot);
+        // console.log(updatedSpot);
 
         fetch(`http://localhost:5000/touristSpot/${_id}`, {
             method: 'PUT',
