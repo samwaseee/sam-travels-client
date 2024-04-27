@@ -5,15 +5,19 @@ import TouristSpot from './TouristSpot';
 import TopCountries from './TopCountries';
 import Newsletter from './Newsletter';
 import PhotoGallery from './PhotoGallery';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
 
     const loadedtouristSpots = useLoaderData();
-    const [touristSpots,setTouristSpots] = useState(loadedtouristSpots);
+    const [touristSpots, setTouristSpots] = useState(loadedtouristSpots);
 
 
     return (
         <div>
+            <Helmet>
+                <title>SAM Travels | Home</title>
+            </Helmet>
             <Header></Header>
             <div className='py-20 bg-[#162b3223]'>
                 <h3 className='text-center text-4xl font-bold'>Popular Tour Package</h3>

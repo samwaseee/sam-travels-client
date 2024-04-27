@@ -5,6 +5,7 @@ import { VscEye, VscEyeClosed } from 'react-icons/vsc';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../provider/AuthProvider';
+import { Helmet } from 'react-helmet';
 
 const LogIn = () => {
 
@@ -55,9 +56,9 @@ const LogIn = () => {
 
     return (
         <div className="hero">
-            {/* <Helmet>
-                <title>SAM's RESIDENCE | Login</title>
-            </Helmet> */}
+            <Helmet>
+                <title>SAM Travels | Login</title>
+            </Helmet>
             <div className="hero-content">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold my-10">Login Account</h1>

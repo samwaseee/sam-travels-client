@@ -5,6 +5,7 @@ import { VscEye, VscEyeClosed } from "react-icons/vsc";
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from "../../provider/AuthProvider";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 const SignUp = () => {
 
@@ -67,9 +68,9 @@ const SignUp = () => {
 
     return (
         <div className="hero">
-            {/* <Helmet>
-                <title>SAM's RESIDENCE | Register</title>
-            </Helmet> */}
+            <Helmet>
+                <title>SAM Travels | Register</title>
+            </Helmet>
             <div className="hero-content">
                 <div className="text-center lg:text-left px-20">
                     <h1 className="text-5xl font-bold my-10">Register now!</h1>
