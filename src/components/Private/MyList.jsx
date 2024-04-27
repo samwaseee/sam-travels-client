@@ -1,15 +1,51 @@
-import React from 'react';
-import Spot from '../layout/Spot';
 import { useLoaderData } from 'react-router-dom';
-import PersonalTouristSpot from './PersonalTouristSpot';
+import { MdAccessTime, MdOutlineDeleteForever } from 'react-icons/md';
+import { IoLocationOutline } from 'react-icons/io5';
+import { SiSpring } from 'react-icons/si';
+import { Link, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const MyList = () => {
 
     const touristSpots = useLoaderData();
     console.log(touristSpots);
 
+    const navigate = useNavigate();
+
+    const handleDelete = _id => {
+        // console.log(_id);
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/touristSpot/${_id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            });
+                            navigate('/');
+                        }
+                    })
+            }
+        });
+    }
+
     return (
-        <div className='my-10'>
+        <div className='my-10 min-h-[50vh]'>
             <h3 className='text-4xl mb-10 text-center font-playfair font-bold'>Here's Your Tourists Spot List</h3>
             {/* {
                 touristSpots.map(touristSpot => <PersonalTouristSpot
@@ -22,37 +58,13 @@ const MyList = () => {
                     {/* head */}
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
+                            <th>Tourist Spot</th>
+                            <th>Details</th>
+                            <th></th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                        {/* <tr>
-                            <td>
-                                <div className="flex items-center gap-3">
-                                    <div className="avatar">
-                                        <div className="mask mask-squircle w-12 h-12">
-                                            <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="font-bold">Hart Hagerty</div>
-                                        <div className="text-sm opacity-50">United States</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                Zemlak, Daniel and Leannon
-                                <br />
-                                <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
-                            </td>
-                            <td>Purple</td>
-                            <th>
-                                <button className="btn btn-ghost btn-xs">details</button>
-                            </th>
-                        </tr> */}
                         {
                             touristSpots.map(touristSpot => <tr
                                 key={touristSpot._id}
@@ -66,17 +78,27 @@ const MyList = () => {
                                         </div>
                                         <div>
                                             <div className="font-bold">{touristSpot.tourists_spot_name}</div>
-                                            <div className="text-sm opacity-50">{touristSpot.location},{touristSpot.country_Name}</div>
+                                            <div className="text-sm opacity-50 flex items-center gap-1"> <IoLocationOutline /> {touristSpot.location},{touristSpot.country_Name}</div>
                                         </div>
                                     </div>
                                 </td>
                                 <td>
                                     {touristSpot.short_description}
-                                    <br />
-                                    <span className="badge badge-ghost badge-sm">{touristSpot.average_cost}$ per person</span>
-                                    <span className="badge badge-ghost badge-sm">{touristSpot.travel_time}</span>
-                                    <span className="badge badge-ghost badge-sm">{touristSpot.seasonality}</span>
+                                    <div className='flex gap-2 my-3'>
+                                        <span className="badge badge-ghost badge-sm">{touristSpot.average_cost}$ per person</span>
+                                        <span className="badge badge-ghost badge-sm"> <MdAccessTime /> <span className='ml-1'>{touristSpot.travel_time}</span> </span>
+                                        <span className="badge badge-ghost badge-sm"> <SiSpring /> <span className='ml-1'>{touristSpot.seasonality}</span></span>
+
+                                    </div>
                                 </td>
+                                <td>
+                                    <Link to={`/updateSpot/${touristSpot._id}`}>
+                                        <div className='btn btn-ghost text-black glass'>Edit</div>
+                                    </Link>
+                                </td>
+                                <th>
+                                    <div onClick={() => handleDelete(touristSpot._id)} className='btn btn-error text-black glass'> <MdOutlineDeleteForever size={30} /> </div>
+                                </th>
                             </tr>)
                         }
                     </tbody>
@@ -84,8 +106,8 @@ const MyList = () => {
                     <tfoot>
                         <tr>
                             <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
+                            <th> Cost <span className='mx-20'>Time</span> Season</th>
+                            <th></th>
                             <th></th>
                         </tr>
                     </tfoot>
