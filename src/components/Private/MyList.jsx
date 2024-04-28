@@ -4,11 +4,12 @@ import { IoLocationOutline } from 'react-icons/io5';
 import { SiSpring } from 'react-icons/si';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 const MyList = () => {
 
     const touristSpots = useLoaderData();
-    // console.log(touristSpots);
+    // console.log(touristSpots[0].user_name);
 
     const navigate = useNavigate();
 
@@ -46,6 +47,9 @@ const MyList = () => {
 
     return (
         <div className='my-10 min-h-[50vh]'>
+            <Helmet>
+                <title>SAM Travels | {touristSpots[0].user_name}s List</title>
+            </Helmet>
             <h3 className='text-4xl mb-10 text-center font-playfair font-bold'>Here's Your Tourists Spot List</h3>
             {/* {
                 touristSpots.map(touristSpot => <PersonalTouristSpot

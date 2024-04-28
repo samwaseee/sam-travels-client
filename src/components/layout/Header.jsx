@@ -23,7 +23,7 @@ const Header = () => {
                     clickable: true,
                 }}
                 modules={[Autoplay, Pagination]}
-                className="mySwiper"
+                className="mySwiper "
             >
                 <SwiperSlide>
                     <div className='lg:flex lg:h-fit h-screen bg-[#162B32E6] items-center '>
