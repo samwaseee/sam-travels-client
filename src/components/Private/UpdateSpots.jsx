@@ -32,7 +32,7 @@ const UpdateSpots = () => {
 
         // console.log(updatedSpot);
 
-        fetch(`http://localhost:5000/touristSpot/${_id}`, {
+        fetch(`https://sam-travels-server-dwoz14wx2-sam-wasees-projects.vercel.app/touristSpot/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': "application/json"

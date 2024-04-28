@@ -33,7 +33,7 @@ const AddSpots = () => {
 
         // console.log(form.country_Name);
 
-        fetch('http://localhost:5000/touristSpot', {
+        fetch('https://sam-travels-server-dwoz14wx2-sam-wasees-projects.vercel.app/touristSpot', {
             method: 'POST',
             headers: {
                 'content-type': "application/json"

@@ -25,7 +25,7 @@ const MyList = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/touristSpot/${_id}`, {
+                fetch(`https://sam-travels-server-dwoz14wx2-sam-wasees-projects.vercel.app/touristSpot/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
