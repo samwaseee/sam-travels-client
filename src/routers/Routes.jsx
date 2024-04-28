@@ -50,6 +50,11 @@ const router = createBrowserRouter([
                 loader: ({params}) => fetch(`http://localhost:5000/touristSpot/${params.id}`)
             },
             {
+                path: "countries/touriesSpots/:country_Name",
+                element: <AllTouristSpot></AllTouristSpot>,
+                loader: ({params}) => fetch(`http://localhost:5000/touristSpot_byCountry/${params.country_Name}`)
+            },
+            {
                 path: "/logIn",
                 element: <LogIn></LogIn>
             },

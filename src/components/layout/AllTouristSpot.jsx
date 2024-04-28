@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import TouristSpot from './TouristSpot';
 import Spot from './Spot';
+import { Helmet } from 'react-helmet';
 
 const AllTouristSpot = () => {
   const touristSpots = useLoaderData();
@@ -19,6 +20,9 @@ const AllTouristSpot = () => {
 
   return (
     <div className="mt-10">
+      <Helmet>
+        <title>SAM Travels | Tourist Spots</title>
+      </Helmet>
       <div className='flex justify-center mb-10'>
         <select onChange={handleSpotSort} className="select w-full max-w-xs">
           <option disabled selected>sort</option>

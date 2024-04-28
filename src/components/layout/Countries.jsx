@@ -1,16 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import TopCountries from './TopCountries';
 
 const Countries = () => {
 
     const [touristSpots,setTouristSpots] = useState([]);
 
-    fetch('http://localhost:5000/countries')
-    .then(res => res.json())
-    .then(data => {
-        // console.log(data);
-        setTouristSpots(data)
-    })
+    // fetch('http://localhost:5000/countries')
+    // .then(res => res.json())
+    // .then(data => {
+    //     // console.log(data);
+    //     setTouristSpots(data)
+    // })
+
+    useEffect(() => {
+        fetch('http://localhost:5000/countries')
+            .then(res => res.json())
+            .then(data => {
+                setTouristSpots(data);
+            });
+    }, [])
 
     return (
         <div>

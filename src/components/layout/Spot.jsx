@@ -11,13 +11,13 @@ const Spot = ({ touristSpot }) => {
     return (
         <div>
             <div className="glass flex mb-10">
-                <img src={image} alt={location} />
+                <img src={image} alt={country_Name} />
                 <div className="card-body">
                     <div className='absolute -top-2 left-0'>
                         <div className='badge bg-[#ff4838] flex gap-2 text-lg p-4 font-bold text-white'> <IoLocationOutline /> {location}</div>
                     </div>
-                    <h2 className="card-title">{tourists_spot_name}</h2>
-
+                    <h2 className="card-title font-playfair text-4xl">{tourists_spot_name}</h2>
+                    <p className='text-xl font-bold'>{country_Name}</p>
                     <p className='flex items-center gap-2'> <MdAccessTime />
                         <p className="flex-1">{travel_time}</p>
 
