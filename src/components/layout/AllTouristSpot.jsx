@@ -19,11 +19,11 @@ const AllTouristSpot = () => {
   }
 
   return (
-    <div className="mt-10">
+    <div className="mt-10 max-w-[92vw] mx-auto">
       <Helmet>
         <title>SAM Travels | Tourist Spots</title>
       </Helmet>
-      <div className='flex justify-center mb-10'>
+      <div className='flex justify-center text-black mb-10'>
         <select onChange={handleSpotSort} className="select w-full max-w-xs">
           <option disabled selected>sort</option>
           <option value="average_cost">Average Cost</option>

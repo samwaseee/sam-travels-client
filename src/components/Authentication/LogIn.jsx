@@ -59,12 +59,12 @@ const LogIn = () => {
             <Helmet>
                 <title>SAM Travels | Login</title>
             </Helmet>
-            <div className="hero-content">
+            <div className="lg:hero-content">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold my-10">Login Account</h1>
                 </div>
                 <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <form onSubmit={handleLogin} className="card-body">
+                    <form onSubmit={handleLogin} className="card-body text-black">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -86,7 +86,7 @@ const LogIn = () => {
                                     setFormValues({ ...formValues, password: e.target.value })
                                 }
                                 required name='password' placeholder="password" className="input input-bordered" />
-                            <label className="label"><span className="relative bottom-10 left-72" onClick={() => setShowPass(!showPass)}>{
+                            <label className="label"><span className="relative bottom-10 left-52 lg:left-72 text-black" onClick={() => setShowPass(!showPass)}>{
                                 showPass ? <VscEyeClosed></VscEyeClosed> : <VscEye />} </span></label>
                         </div>
                         <div className="form-control mt-4">
@@ -102,7 +102,7 @@ const LogIn = () => {
                     }
                     <p className='mb-2 text-xl flex justify-center items-center gap-2'> <span> <hr className='w-20' /> </span> <span> or </span> <hr className='w-20' /> </p>
                     <SocialLogin></SocialLogin>
-                    <p className='mx-auto pb-5'>Don't have an account <Link to={'/signUp'} className='font-bold'>Register</Link> </p>
+                    <p className='mx-auto pb-5 text-black'>Don't have an account <Link to={'/signUp'} className='font-bold'>Register</Link> </p>
                 </div>
             </div>
         </div>

@@ -5,7 +5,7 @@ const Countries = () => {
 
     const [touristSpots,setTouristSpots] = useState([]);
 
-    // fetch('https://sam-travels-server-dwoz14wx2-sam-wasees-projects.vercel.app/countries')
+    // fetch('https://sam-travels-server.vercel.app/countries')
     // .then(res => res.json())
     // .then(data => {
     //     // console.log(data);
@@ -13,7 +13,7 @@ const Countries = () => {
     // })
 
     useEffect(() => {
-        fetch('https://sam-travels-server-dwoz14wx2-sam-wasees-projects.vercel.app/countries')
+        fetch('https://sam-travels-server.vercel.app/countries')
             .then(res => res.json())
             .then(data => {
                 setTouristSpots(data);

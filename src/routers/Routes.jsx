@@ -23,7 +23,7 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch('https://sam-travels-server-dwoz14wx2-sam-wasees-projects.vercel.app/touristSpot')
+                loader: () => fetch('https://sam-travels-server.vercel.app/touristSpot')
             },
             {
                 path: "/addSpot",
@@ -32,27 +32,27 @@ const router = createBrowserRouter([
             {
                 path: "/allTouristSpot",
                 element: <AllTouristSpot></AllTouristSpot>,
-                loader: () => fetch('https://sam-travels-server-dwoz14wx2-sam-wasees-projects.vercel.app/touristSpot')
+                loader: () => fetch('https://sam-travels-server.vercel.app/touristSpot')
             },
             {
                 path: "/myList/:user_email/:user_name",
                 element: <PrivateRoute> <MyList></MyList> </PrivateRoute>,
-                loader: ({params}) => fetch(`https://sam-travels-server-dwoz14wx2-sam-wasees-projects.vercel.app/touristSpot/${params.user_email}/${params.user_name}`)
+                loader: ({params}) => fetch(`https://sam-travels-server.vercel.app/touristSpot/${params.user_email}/${params.user_name}`)
             },
             {
                 path: "/updateSpot/:id",
                 element: <PrivateRoute> <UpdateSpots></UpdateSpots> </PrivateRoute>,
-                loader: ({params}) => fetch(`https://sam-travels-server-dwoz14wx2-sam-wasees-projects.vercel.app/touristSpot/${params.id}`)
+                loader: ({params}) => fetch(`https://sam-travels-server.vercel.app/touristSpot/${params.id}`)
             },
             {
                 path: "touristSpot/:id",
                 element: <PrivateRoute> <TouristSpotDetails></TouristSpotDetails> </PrivateRoute>,
-                loader: ({params}) => fetch(`https://sam-travels-server-dwoz14wx2-sam-wasees-projects.vercel.app/touristSpot/${params.id}`)
+                loader: ({params}) => fetch(`https://sam-travels-server.vercel.app/touristSpot/${params.id}`)
             },
             {
                 path: "countries/touriesSpots/:country_Name",
                 element: <AllTouristSpot></AllTouristSpot>,
-                loader: ({params}) => fetch(`https://sam-travels-server-dwoz14wx2-sam-wasees-projects.vercel.app/touristSpot_byCountry/${params.country_Name}`)
+                loader: ({params}) => fetch(`https://sam-travels-server.vercel.app/touristSpot_byCountry/${params.country_Name}`)
             },
             {
                 path: "/logIn",

@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 const MyList = () => {
 
     const touristSpots = useLoaderData();
-    console.log(touristSpots);
+    // console.log(touristSpots);
 
     const navigate = useNavigate();
 
@@ -25,7 +25,7 @@ const MyList = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://sam-travels-server-dwoz14wx2-sam-wasees-projects.vercel.app/touristSpot/${_id}`, {
+                fetch(`https://sam-travels-server.vercel.app/touristSpot/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

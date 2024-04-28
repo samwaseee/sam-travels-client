@@ -26,7 +26,7 @@ const Header = () => {
                 className="mySwiper"
             >
                 <SwiperSlide>
-                    <div className='flex bg-[#162B32E6] items-center '>
+                    <div className='lg:flex lg:h-fit h-screen bg-[#162B32E6] items-center '>
                         <img src="https://demo.egenslab.com/html/tourxpro/demo/assets/images/banner/bg-highlight1.png" />
                         <div className='text-white ml-8'>
                             <Fade direction='down'>
@@ -47,7 +47,7 @@ const Header = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className='flex bg-[#162B32E6] items-center '>
+                    <div className='lg:flex lg:h-fit h-screen bg-[#162B32E6] items-center '>
                         <img src="https://demo.egenslab.com/html/tourxpro/demo/assets/images/banner/bg-highlight2.png" />
                         <div className='text-white ml-8'>
                             <Fade direction='down'>
@@ -68,7 +68,7 @@ const Header = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className='flex bg-[#162B32E6] items-center '>
+                    <div className='lg:flex lg:h-fit h-screen bg-[#162B32E6] items-center '>
                         <img src="https://demo.egenslab.com/html/tourxpro/demo/assets/images/banner/bg-highlight3.png" />
                         <div className='text-white ml-8'>
                             <Fade direction='down'>

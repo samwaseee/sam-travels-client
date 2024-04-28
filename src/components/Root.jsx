@@ -12,7 +12,7 @@ const Root = () => {
     const toggleTheme = () => {
         if (theme === 'light') {
             setTheme('dark');
-            console.log('dark');
+            // console.log('dark');
         } else {
             setTheme('light');
         }

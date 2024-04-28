@@ -10,8 +10,8 @@ const Spot = ({ touristSpot }) => {
 
     return (
         <div>
-            <div className="glass flex mb-10">
-                <img src={image} alt={country_Name} />
+            <div className="glass lg:flex mb-10">
+                <img src={image} alt={country_Name} className='w-full md:w-fit'/>
                 <div className="card-body">
                     <div className='absolute -top-2 left-0'>
                         <div className='badge bg-[#ff4838] flex gap-2 text-lg p-4 font-bold text-white'> <IoLocationOutline /> {location}</div>

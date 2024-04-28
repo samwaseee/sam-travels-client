@@ -71,13 +71,13 @@ const SignUp = () => {
             <Helmet>
                 <title>SAM Travels | Register</title>
             </Helmet>
-            <div className="hero-content">
+            <div className="lg:hero-content">
                 <div className="text-center lg:text-left px-20">
                     <h1 className="text-5xl font-bold my-10">Register now!</h1>
                     <p> For Getting Your personlised Tourists Spots</p>
                     </div>
                 <div className="card shrink-0 shadow-2xl bg-base-100 w-[33vw] min-w-96">
-                    <form onSubmit={handleReg} className="card-body">
+                    <form onSubmit={handleReg} className="card-body text-black">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text"></span>
@@ -105,7 +105,7 @@ const SignUp = () => {
                                 required name='password'
                                 placeholder="password"
                                 className="input input-bordered" />
-                            <span className="relative bottom-8 left-72 lg:left-96" onClick={() => setShowPass(!showPass)}>{
+                            <span className="absolute bottom-[172px] left-80 lg:left-[410px]" onClick={() => setShowPass(!showPass)}>{
                                 showPass ? <VscEyeClosed></VscEyeClosed> : <VscEye />} </span>
                         </div>
                         <div className="form-control mt-6">
@@ -118,7 +118,7 @@ const SignUp = () => {
                     {
                         regSuccess && <p className="text-green-700 text-center -mt-4 mb-4">{regSuccess}</p>
                     }
-                    <p className='mx-auto pb-5'>Already have an account <Link to={'/login'} className='font-bold'>Log In</Link> </p>
+                    <p className='mx-auto pb-5 text-black'>Already have an account <Link to={'/login'} className='font-bold'>Log In</Link> </p>
                 </div>
             </div>
         </div>
