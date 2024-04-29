@@ -71,7 +71,7 @@ const Navbar = ({toggleTheme}) => {
                         {links}
                     </ul>
                 </div>
-                <a className="text-white text-5xl font-bold"> <span className='text-[#ff4838]'>SAM</span> Travels </a>
+                <Link to={'/'}><a className="text-white text-5xl font-bold"> <span className='text-[#ff4838]'>SAM</span> Travels </a></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

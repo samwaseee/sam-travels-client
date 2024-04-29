@@ -105,7 +105,7 @@ const SignUp = () => {
                                 required name='password'
                                 placeholder="password"
                                 className="input input-bordered" />
-                            <span className="absolute bottom-[172px] left-80 lg:left-[410px]" onClick={() => setShowPass(!showPass)}>{
+                            <span className="absolute bottom-[196px] left-80 lg:left-[430px]" onClick={() => setShowPass(!showPass)}>{
                                 showPass ? <VscEyeClosed></VscEyeClosed> : <VscEye />} </span>
                         </div>
                         <div className="form-control mt-6">
@@ -113,7 +113,7 @@ const SignUp = () => {
                         </div>
                     </form>
                     {
-                        regError && <p className="text-red-700 ml-7 -mt-4 mb-4">*{regError}</p>
+                        regError ? <p className="text-red-700 ml-7 -mt-4 mb-4">*{regError}</p> : <p>.</p>
                     }
                     {
                         regSuccess && <p className="text-green-700 text-center -mt-4 mb-4">{regSuccess}</p>
