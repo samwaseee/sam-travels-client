@@ -13,6 +13,7 @@ const Home = () => {
 
     const loadedtouristSpots = useLoaderData();
     const [touristSpots, setTouristSpots] = useState(loadedtouristSpots);
+    const [dataLength, setDataLength] = useState(6);
 
 
     return (
@@ -26,13 +27,16 @@ const Home = () => {
                 <p className='text-center max-w-5xl mx-auto'>iscover the joy of travel with SAM Travels! We offer a wide range of tour packages that cater to all tastes and budgets. Our popular tour packages are carefully curated to provide you with an unforgettable travel experience. From the pristine beaches of Bali to the bustling streets of New York, our packages cover destinations across the globe.</p>
                 <div className="flex flex-wrap gap-10 justify-center mt-10">
                     {
-                        touristSpots.map(touristSpot => <TouristSpot
+                        touristSpots.slice(0, dataLength).map(touristSpot => <TouristSpot
                             key={touristSpot._id}
                             touristSpot={touristSpot}
                             touristSpots={touristSpots}
                             setTouristSpots={setTouristSpots}
                         ></TouristSpot>)
                     }
+                </div>
+                <div className={dataLength === touristSpots.length ? 'hidden' : 'mx-auto w-28 my-10'}>
+                    <button onClick={() => setDataLength(touristSpots.length)} className='btn btn-ghost min-h-0 h-8 text-white bg-[#ff4838] rounded-3xl'>Load more</button>
                 </div>
                 <h3 className='text-center text-4xl font-bold mt-20'>Explore The {' '}
                     <span style={{ color: '#ff4838', fontWeight: 'bold' }}>

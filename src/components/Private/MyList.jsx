@@ -35,7 +35,7 @@ const MyList = () => {
                         if (data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",
-                                text: "Your file has been deleted.",
+                                text: "Your Spot has been deleted.",
                                 icon: "success"
                             });
                             navigate('/');
@@ -48,7 +48,7 @@ const MyList = () => {
     return (
         <div className='my-10 min-h-[50vh]'>
             <Helmet>
-                <title>SAM Travels | {touristSpots[0].user_name}s List</title>
+                <title>SAM Travels | My List</title>
             </Helmet>
             <h3 className='text-4xl mb-10 text-center font-playfair font-bold'>Here's Your Tourists Spot List</h3>
             {/* {

@@ -22,9 +22,9 @@ const TouristSpot = ({ touristSpot, touristSpots, setTouristSpots }) => {
                         <div className='badge bg-[#ff4838] flex gap-2 text-lg p-4 font-bold text-white'> <IoLocationOutline /> {location}</div>
                     </div>
                     <h2 className="card-title">{tourists_spot_name}</h2>
-                    <p className='flex items-center gap-2'> <MdAccessTime />
+                    <div className='flex items-center gap-2'> <MdAccessTime />
                         <p className="flex-1">{travel_time}</p>
-                        <div className='flex gap-2 items-center text-lg p-4'> <SiSpring />  {seasonality}</div></p>
+                        <div className='flex gap-2 items-center text-lg p-4'> <SiSpring />  {seasonality}</div></div>
                     <div className="card-actions justify-end">
                         <div className='flex-1'>
                             <p>From</p>

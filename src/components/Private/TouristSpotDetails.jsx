@@ -18,7 +18,7 @@ const TouristSpotDetails = () => {
                 <title>SAM Travles | {tourists_spot_name}</title>
             </Helmet>
 
-            <img src={image} className="h-[60vh] mx-auto mt-10 rounded-3xl" />
+            <img src={image} alt={country_Name} className="h-[60vh] mx-auto mt-10 rounded-3xl" />
             <div className="w-[85vw] lg:max-w-[50vw] mx-auto">
                 <div className="flex gap-4 items-center my-10">
                     <div className='badge flex gap-2 p-4 text-xl'> <FaLocationDot></FaLocationDot> {location}</div>

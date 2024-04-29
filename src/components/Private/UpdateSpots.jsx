@@ -136,9 +136,9 @@ const UpdateSpots = () => {
                     <div className="label">
                         <span className="label-text text-white">Photo URL</span>
                     </div>
-                    <input type="URL" name='photo' defaultValue={image} placeholder="Use image URL" className="input input-bordered " />
+                    <input type="URL" name='image' defaultValue={image} placeholder="Use image URL" className="input input-bordered " />
                 </label>
-                <input type="submit" value="ADD TOURIST SPOT" className='btn btn-ghost text-white font-bold text-xl bg-[#ff4838] md:col-span-3 mt-7' />
+                <input type="submit" value="UPDATE TOURIST SPOT" className='btn btn-ghost text-white font-bold text-xl bg-[#ff4838] md:col-span-3 mt-7' />
             </div>
         </form>
     );
