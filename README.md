@@ -1,8 +1,8 @@
 # SAM Travels
 
->Live Site : [Insert your live site URL here]
+>Live Site : [https://sam-travels-a10.web.app/]
 
-Welcome to the GitHub repository of SAM Travels, a travel-themed website focusing on _###Europe-zones_.
+Welcome to the GitHub repository of SAM Travels, a travel-themed website focusing on ###_Europe-zones_.
 
 ## Features and Characteristics
 
