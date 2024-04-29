@@ -61,7 +61,7 @@ const Navbar = ({toggleTheme}) => {
     </>
 
     return (
-        <div className="navbar bg-[#162B32E6]">
+        <div className="navbar p-4 bg-[#162B32E6]">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -71,7 +71,7 @@ const Navbar = ({toggleTheme}) => {
                         {links}
                     </ul>
                 </div>
-                <a className="text-white text-4xl font-bold"> <span className='text-[#ff4838]'>SAM</span> Travels </a>
+                <a className="text-white text-5xl font-bold"> <span className='text-[#ff4838]'>SAM</span> Travels </a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -86,11 +86,11 @@ const Navbar = ({toggleTheme}) => {
                 </label>
                 {
                     user ?
-                        <div className="flex  md:flex-row gap-3 items-center justify-end mb-3">
-                            <a data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName}>
+                        <div className="flex  md:flex-row gap-3 items-center justify-end mb-6">
+                            <a data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName} >
                                 <button className=""> <img src={user.photoURL} alt="No image" className="rounded-badge w-10" /> </button>
                             </a>
-                            <Tooltip id="my-tooltip" />
+                            <Tooltip id="my-tooltip"/>
                             <button onClick={handleSignout} className="btn btn-outline text-white bg-[#ff4838]">Log Out</button>
                         </div>
                         :
