@@ -1,6 +1,6 @@
 # SAM Travels
 
-## >Live Site : [https://sam-travels-a10.web.app/]
+> ## Live Site : [https://sam-travels-a10.web.app/]
 
 ### server side repo : https://github.com/samwaseee/sam-travels-server
 
