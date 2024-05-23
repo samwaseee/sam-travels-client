@@ -1,6 +1,8 @@
 # SAM Travels
 
->Live Site : [https://sam-travels-a10.web.app/]
+## >Live Site : [https://sam-travels-a10.web.app/]
+
+### server side repo : https://github.com/samwaseee/sam-travels-server
 
 Welcome to the GitHub repository of SAM Travels, a travel-themed website focusing on ###_Europe-zones_.
 
