@@ -4,7 +4,8 @@
 
 ### server side repo : https://github.com/samwaseee/sam-travels-server
 
-Welcome to the GitHub repository of SAM Travels, a travel-themed website focusing on ### _Europe-zones_.
+Welcome to the GitHub repository of SAM Travels, a travel-themed website focusing on 
+### _Europe-zones_.
 
 ## Features and Characteristics
 
