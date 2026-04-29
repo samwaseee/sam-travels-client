@@ -3,10 +3,10 @@
 **Welcome to the GitHub repository of SAM Travels, a travel-themed website focusing on _Europe-zones_**
 
 >  ### **[Live site]( https://sam-travels-a10.web.app)**
+<img width="2976" height="1426" src="https://github.com/user-attachments/assets/e61b89e3-a147-4148-97d4-21efc67e3de9" />
+
+
 >  **[Server side repo](https://github.com/samwaseee/sam-travels-server)**
-
-
-
 ## Features and Characteristics
 
 1. **Home Page**: Contains a navbar with active routes. The navbar includes the Website name, Home, All Tourists Spot, Add Tourists Spot (private/protected route), My List (private/protected route), Login, and Register.
